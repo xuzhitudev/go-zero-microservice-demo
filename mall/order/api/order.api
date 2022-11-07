@@ -1,14 +1,23 @@
-type (
-	OrderReq {
-		Id string `path:"id"`
-	}
+info(
+    title: "order api"
+    desc: "order api 初始文件"
+    author: "xuzhitu"
+    email: "xuzhitu@163.com"
+    date: "2022-11-07"
+    version: "v1.0"
+)
 
-	OrderReply {
-		Id   string `json:"id"`
-		Name string `json:"name"`
-	}
+type (
+    OrderReq {
+        Id string `path:"id"`
+    }
+
+    OrderReply {
+        Id string `json:"id"`
+        Name string `json:"name"`
+    }
 )
 service order {
-	@handler getOrder
-	get /api/order/get/:id (OrderReq) returns (OrderReply)
+    @handler getOrder
+    get /api/order/get/:id (OrderReq) returns (OrderReply)
 }
